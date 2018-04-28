@@ -10,6 +10,9 @@
 #import "Masonry.h"
 #import "NewsModel.h"
 
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
 @interface NewsCell()
 
 @property (nonatomic, strong) UILabel *newsText;        // 新闻文本
