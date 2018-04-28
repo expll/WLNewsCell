@@ -6,6 +6,9 @@
 //  Copyright © 2018年 Anchoriter. All rights reserved.
 //
 
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
 #import <UIKit/UIKit.h>
 
 
