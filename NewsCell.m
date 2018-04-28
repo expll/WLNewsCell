@@ -43,9 +43,9 @@
     [self.contentView addSubview:self.bottomSpaceView];
     
     [self.newsText mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(10);
-        make.top.mas_equalTo(16);
-        make.right.mas_equalTo(-10);
+        make.left.mas_equalTo(18);
+        make.top.mas_equalTo(10);
+        make.right.mas_equalTo(-15);
     }];
 
     self.newsText.preferredMaxLayoutWidth = SCREEN_WIDTH-10-10-1;
@@ -66,7 +66,7 @@
     }];
     
     [self.foldLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.newsText.mas_left);
+        make.right.mas_equalTo(self.newsText.mas_right).offset(10);
         make.width.mas_equalTo(50);
         make.height.mas_equalTo(44);
         make.centerY.mas_equalTo(self.newsDate.mas_centerY);
@@ -156,8 +156,8 @@
 -(UILabel *)foldLabel{
     if (!_foldLabel) {
         _foldLabel = [[UILabel alloc] init];
-        _foldLabel.font = [UIFont systemFontOfSize:14.f];
-        _foldLabel.textColor = [UIColor redColor];
+        _foldLabel.font = [UIFont italicSystemFontOfSize:14.f];
+        _foldLabel.textColor = [UIColor lightGrayColor];
         _foldLabel.userInteractionEnabled = YES;
         UITapGestureRecognizer *foldTap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(foldNewsOrNoTap:)];
         [_foldLabel addGestureRecognizer:foldTap];
@@ -200,7 +200,7 @@
     {
         _newsText = [[UILabel alloc] init];
         _newsText.textColor = [UIColor blackColor];
-        _newsText.font = [UIFont systemFontOfSize:18.0f];
+        _newsText.font = [UIFont systemFontOfSize:14.0f];
     }
     
     return _newsText;
