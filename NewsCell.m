@@ -85,6 +85,7 @@
         [paragraphStyle setLineSpacing:3];
         [paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
         [img_text addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, self.newsText.text.length)];
+        [img_text addAttribute:NSKernAttributeName value:@1.5f range:NSMakeRange(0, self.newsText.text.length)];
 
         self.newsText.attributedText = img_text;
     }
@@ -200,7 +201,7 @@
     {
         _newsText = [[UILabel alloc] init];
         _newsText.textColor = [UIColor blackColor];
-        _newsText.font = [UIFont systemFontOfSize:14.0f];
+        _newsText.font = [UIFont systemFontOfSize:15.0f weight:UIFontWeightThin];
     }
     
     return _newsText;
